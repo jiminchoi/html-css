@@ -1,0 +1,314 @@
+
+body {
+	margin: 0;
+	
+}
+#back_stage, #stage{
+	position: absolute;
+}
+h1 {
+	font-size: 30px;
+	font-style: arial;
+	font-weight: bolder;
+	margin: 0 0 0 0;
+	top: 5px;
+	left: 60px;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:link {color: white;}
+a:visited { color: white; }
+a:hover { color: green; }
+a:active { color: blue; }
+
+
+#design_G {
+	height: 10px;
+	width: 100%;
+	background-color: #59d229;
+}
+.onsen {
+	float: left;
+	margin: 0;
+	width: 60px;
+	height: 60px;
+}
+
+#menu{
+	margin: 0px, 0px;
+	width: auto;
+	border-left: 1px #666666 solid;
+	border-right: 1px #666666 solid;
+	background-color: #59d229;
+	overflow: hidden;
+}
+#M_menu{
+	margin:0px auto; width:1120px;
+}
+#M_menu > p {
+	width: 150px;
+	height: 50px;
+	line-height: 45px;
+	padding: 5px;
+	margin: 0px;
+	font-size: 20px;
+	color: #ffffff;
+	float: left;
+	display: block;
+	text-align: center;
+}
+
+
+#back_stage{
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	height: 451px;
+	width: 100%;
+	background-color: white/*rgb(90,95,190)*/;
+}
+/* 表示画面 */
+#stage {
+	position: relative;
+	width: 800px;
+	height: 451px;
+	margin: 0 auto;
+}
+/* 表示枠 */
+#frame {
+	width: 800px;
+	height: 451px;
+	position: relative;
+	overflow: hidden;
+}
+/*全ての写真を水平一列に格納したdiv、#photosに,
+スライドショーの animation を設定*/
+#photos {
+	position:absolute;
+	top:0;
+	width:5600px;
+	animation: imgPassToLeft0 30s infinite;
+}
+/*各写真の並び位置を設定
+#photo0と#photo5、#photo6と#photo1は同じスライド*/
+#photo0, #photo1, #photo2, #photo3, #photo4, #photo5, #photo6 {
+	float:left;
+	position:relative;
+}
+/* 全てのラジオボタンを非表示に */
+#back1,#back2,#back3,#back4,#back5,#next1,#next2,#next3,#next4,#next5{
+	display: none;
+}
+/*送りボタン文字（＜、＞）の設定*/
+.b_left span, .b_right span {
+	position: absolute;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-size: 40px;
+	font-weight: bold;
+	opacity:0;
+	top: 190px;
+	color:#EEE;
+}
+.b_left span {
+	left: 10px;
+}
+.b_right span {
+	left: 750px
+}
+/*ボタン文字hover時の設定*/
+.pic:hover > label div span {
+	opacity:1;
+	color:#EEE;
+}
+.pic label div span:hover {
+	color:#f00;
+	cursor:pointer;
+}
+/* 各送りボタンクリック時のanimation設定 */
+#next1:checked ~ #photos {
+	animation: imgPassToLeft1 30s infinite;	
+	animation-delay: -4.8s;
+}
+#next2:checked ~ #photos {
+	animation: imgPassToLeft2 30s infinite;
+	animation-delay: -10.8s;
+}
+#next3:checked ~ #photos {
+	animation: imgPassToLeft3 30s infinite;
+	animation-delay: -16.8s;
+}
+#next4:checked ~ #photos {
+	animation: imgPassToLeft4 30s infinite;
+	animation-delay: -22.8s;
+}
+#next5:checked ~ #photos {
+	animation: imgPassToLeft5 30s infinite;
+	animation-delay: -28.8s;
+}
+#back1:checked ~ #photos {
+	animation: imgPassToRight1 30s infinite;
+	animation-delay: -28.8s;
+}
+#back2:checked ~ #photos {
+	animation: imgPassToRight2 30s infinite;
+	animation-delay: -22.8s;
+}
+#back3:checked ~ #photos {
+	animation: imgPassToRight3 30s infinite;
+	animation-delay: -16.8s;
+}
+#back4:checked ~ #photos {
+	animation: imgPassToRight4 30s infinite;
+	animation-delay: -10.8s;
+}
+#back5:checked ~ #photos {
+	animation: imgPassToRight5 30s infinite;
+	animation-delay: -4.8s;
+}
+/* animation設定 */
+@keyframes imgPassToLeft0 {
+	0% {  right:-500%; }
+	16% { right:-500%; }
+	20% { right:-400%; }
+	36% { right:-400%; }
+	40% { right:-300%; }
+	56% { right:-300%; }
+	60% { right:-200%; }
+	76% { right:-200%; }
+	80% { right:-100%; }
+	96% { right: :-100%; }
+	100% { right: :0%; }
+}
+@keyframes imgPassToLeft1 {
+	0% {  right:-500%; }
+	16% { right:-500%; }
+	20% { right:-400%; }
+	36% { right:-400%; }
+	40% { right:-300%; }
+	56% { right:-300%; }
+	60% { right:-200%; }
+	76% { right:-200%; }
+	80% { right:-100%; }
+	96% { right: :-100%; }
+	100% { right: :0%; }
+}
+@keyframes imgPassToLeft2 {
+	0% {  right:-500%; }
+	16% { right:-500%; }
+	20% { right:-400%; }
+	36% { right:-400%; }
+	40% { right:-300%; }
+	56% { right:-300%; }
+	60% { right:-200%; }
+	76% { right:-200%; }
+	80% { right:-100%; }
+	96% { right: :-100%; }
+	100% { right: :0%; }
+}
+@keyframes imgPassToLeft3 {
+	0% {  right:-500%; }
+	16% { right:-500%; }
+	20% { right:-400%; }
+	36% { right:-400%; }
+	40% { right:-300%; }
+	56% { right:-300%; }
+	60% { right:-200%; }
+	76% { right:-200%; }
+	80% { right:-100%; }
+	96% { right: :-100%; }
+	100% { right: :0%; }
+}
+@keyframes imgPassToLeft4 {
+	0% {  right:-500%; }
+	16% { right:-500%; }
+	20% { right:-400%; }
+	36% { right:-400%; }
+	40% { right:-300%; }
+	56% { right:-300%; }
+	60% { right:-200%; }
+	76% { right:-200%; }
+	80% { right:-100%; }
+	96% { right: :-100%; }
+	100% { right: :0%; }
+}
+@keyframes imgPassToLeft5 {
+	0% {  right:-500%; }
+	16% { right:-500%; }
+	20% { right:-400%; }
+	36% { right:-400%; }
+	40% { right:-300%; }
+	56% { right:-300%; }
+	60% { right:-200%; }
+	76% { right:-200%; }
+	80% { right:-100%; }
+	96% { right: :-100%; }
+	100% { right: :0%; }
+}
+@keyframes imgPassToRight1 {
+	0% {  left:-500%; }
+	16% { left:-500%; }
+	20% { left:-400%; }
+	36% { left:-400%; }
+	40% { left:-300%; }
+	56% { left:-300%; }
+	60% { left:-200%; }
+	76% { left:-200%; }
+	80% { left:-100%; }
+	96% { left:-100%; }
+	100% { left:0%; }
+}
+@keyframes imgPassToRight2 {
+	0% {  left:-500%; }
+	16% { left:-500%; }
+	20% { left:-400%; }
+	36% { left:-400%; }
+	40% { left:-300%; }
+	56% { left:-300%; }
+	60% { left:-200%; }
+	76% { left:-200%; }
+	80% { left:-100%; }
+	96% { left:-100%; }
+	100% { left:0%; }
+}
+@keyframes imgPassToRight3 {
+	0% {  left:-500%; }
+	16% { left:-500%; }
+	20% { left:-400%; }
+	36% { left:-400%; }
+	40% { left:-300%; }
+	56% { left:-300%; }
+	60% { left:-200%; }
+	76% { left:-200%; }
+	80% { left:-100%; }
+	96% { left:-100%; }
+	100% { left:0%; }
+}
+@keyframes imgPassToRight4 {
+	0% {  left:-500%; }
+	16% { left:-500%; }
+	20% { left:-400%; }
+	36% { left:-400%; }
+	40% { left:-300%; }
+	56% { left:-300%; }
+	60% { left:-200%; }
+	76% { left:-200%; }
+	80% { left:-100%; }
+	96% { left:-100%; }
+	100% { left:0%; }
+}
+@keyframes imgPassToRight5 {
+	0% {  left:-500%; }
+	16% { left:-500%; }
+	20% { left:-400%; }
+	36% { left:-400%; }
+	40% { left:-300%; }
+	56% { left:-300%; }
+	60% { left:-200%; }
+	76% { left:-200%; }
+	80% { left:-100%; }
+	96% { left:-100%; }
+	100% { left:0%; }
+}
